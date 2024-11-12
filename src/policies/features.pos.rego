@@ -17,7 +17,7 @@ visible {
 	data.roles[user_roles[i]].perms[path].visible
 }
 
+# Enabled if feature flag is on
 enabled {
-	some i
-	data.roles[user_roles[i]].perms[path].enabled
+	data.dashboard["rebac.features.pos"].enabled
 }
