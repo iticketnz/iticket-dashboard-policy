@@ -4,7 +4,7 @@ default allowed = false
 default visible = false
 default enabled = false
 
-# Check if "admin" is one of the user's roles
+# Check if "admin" tenant and at least viewer role
 allowed {
 	ds.check({
     "object_type": "tenant",
@@ -28,7 +28,7 @@ visible {
 	allowed
 }
 
-# Enabled if the policy is allowed
+# Enabled if feature flag is on
 enabled {
-	allowed
+	data.dashboard["rebac.features.events"].enabled
 }

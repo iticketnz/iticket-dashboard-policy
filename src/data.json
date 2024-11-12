@@ -1,0 +1,13 @@
+{
+  "dashboard": {
+    "rebac.features.events": {
+      "enabled": false
+    },
+    "rebac.features.user": {
+      "enabled": true
+    },
+    "rebac.features.pos": {
+      "enabled": true
+    }
+  }
+}
