@@ -5,7 +5,7 @@ import input.user.properties.roles as user_roles
 
 default allowed = false
 default visible = false
-default enabled = false
+default enabled = true
 
 allowed {
 	some i
@@ -18,4 +18,5 @@ visible {
 }
 
 # Enabled if feature flag is on
-enabled := true
+enabled {
+}

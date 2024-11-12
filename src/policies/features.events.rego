@@ -2,7 +2,7 @@ package rebac.features.events
 
 default allowed = false
 default visible = false
-default enabled = false
+default enabled = true
 
 # Check if "admin" tenant and at least viewer role
 allowed {
@@ -29,4 +29,5 @@ visible {
 }
 
 # Enabled if feature flag is on
-enabled := true
+enabled {
+}
