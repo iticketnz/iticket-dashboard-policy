@@ -1,5 +1,7 @@
 {
-  "roots": ["rebac"],
+  "roots": [
+    "rebac"
+  ],
   "metadata": {
     "required_builtins": {
       "builtin1": [
