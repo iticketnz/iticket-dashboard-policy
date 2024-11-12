@@ -29,6 +29,4 @@ visible {
 }
 
 # Enabled if feature flag is on
-enabled {
-	data.dashboard["rebac.features.events"].enabled
-}
+enabled := true
