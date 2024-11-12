@@ -8,7 +8,7 @@ default enabled = false
 allowed {
 	ds.check({
     "object_type": "tenant",
-    "object_id": input.tenant.id,
+    "object_id": input.resource.tenant.id,
     "relation": "viewer",
     "subject_type": "user",
     "subject_id": input.user.id
