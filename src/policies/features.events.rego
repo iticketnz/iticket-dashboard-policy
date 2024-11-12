@@ -1,23 +1,34 @@
 package rebac.features.events
 
-import input.policy.path
-import input.user.properties.roles as user_roles
-
 default allowed = false
 default visible = false
 default enabled = false
 
+# Check if "admin" is one of the user's roles
 allowed {
-	some i
-	data.roles[user_roles[i]].perms[path].allowed
+	ds.check({
+    "object_type": "tenant",
+    "object_id": input.tenant.id,
+    "relation": "viewer",
+    "subject_type": "user",
+    "subject_id": input.user.id
+  })
+
+  ds.check({
+    "object_type": "group",
+    "object_id": "viewer",
+	"relation": "member",
+    "subject_type": "user",
+    "subject_id": input.user.id
+  })
 }
 
+# Visible if the policy is allowed
 visible {
-	some i
-	data.roles[user_roles[i]].perms[path].visible
+	allowed
 }
 
+# Enabled if the policy is allowed
 enabled {
-	some i
-	data.roles[user_roles[i]].perms[path].enabled
+	allowed
 }
