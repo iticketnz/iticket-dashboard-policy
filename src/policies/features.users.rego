@@ -17,6 +17,3 @@ visible {
 	some i
 	data.roles[user_roles[i]].perms[path].visible
 }
-
-enabled {
-}

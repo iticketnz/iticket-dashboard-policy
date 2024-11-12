@@ -5,6 +5,7 @@ import input.user.properties.roles as user_roles
 
 default allowed = false
 default visible = false
+# feature flag
 default enabled = true
 
 allowed {
@@ -15,8 +16,4 @@ allowed {
 visible {
 	some i
 	data.roles[user_roles[i]].perms[path].visible
-}
-
-# Enabled if feature flag is on
-enabled {
 }

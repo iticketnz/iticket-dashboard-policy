@@ -2,6 +2,7 @@ package rebac.features.events
 
 default allowed = false
 default visible = false
+# feature flag
 default enabled = true
 
 # Check if "admin" tenant and at least viewer role
@@ -26,8 +27,4 @@ allowed {
 # Visible if the policy is allowed
 visible {
 	allowed
-}
-
-# Enabled if feature flag is on
-enabled {
 }
