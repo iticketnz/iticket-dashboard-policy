@@ -1,5 +1,5 @@
 {
-  "dashboard": {
+  "policies": {
     "rebac.features.events": {
       "enabled": false
     },
