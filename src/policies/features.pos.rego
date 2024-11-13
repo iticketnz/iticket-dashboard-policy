@@ -8,12 +8,25 @@ default visible = false
 # feature flag
 default enabled = true
 
+# Check if tenant and at least viewer role
 allowed {
-	some i
-	data.roles[user_roles[i]].perms[path].allowed
+	ds.check({
+    "object_type": "tenant",
+    "object_id": input.resource.tenant.id,
+    "relation": "can_view",
+    "subject_type": "user",
+    "subject_id": input.user.id
+  })
+
+  ds.check({
+    "object_type": "group",
+    "object_id": "viewer",
+	"relation": "member",
+    "subject_type": "user",
+    "subject_id": input.user.id
+  })
 }
 
 visible {
-	some i
-	data.roles[user_roles[i]].perms[path].visible
+	allowed
 }

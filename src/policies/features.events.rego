@@ -5,12 +5,12 @@ default visible = false
 # feature flag
 default enabled = true
 
-# Check if "admin" tenant and at least viewer role
+# Check if tenant and at least viewer role
 allowed {
 	ds.check({
     "object_type": "tenant",
     "object_id": input.resource.tenant.id,
-    "relation": "viewer",
+    "relation": "can_view",
     "subject_type": "user",
     "subject_id": input.user.id
   })
@@ -18,7 +18,7 @@ allowed {
   ds.check({
     "object_type": "group",
     "object_id": "viewer",
-	"relation": "member",
+    "relation": "member",
     "subject_type": "user",
     "subject_id": input.user.id
   })
