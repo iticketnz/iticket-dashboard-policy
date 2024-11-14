@@ -1,4 +1,7 @@
-package rebac.features.events
+package api.get.event.id
+
+import input.policy.path
+import input.user.properties.roles as user_roles
 
 default allowed = false
 default visible = false
@@ -10,21 +13,12 @@ allowed {
 	ds.check({
     "object_type": "tenant",
     "object_id": input.resource.tenant.id,
-    "relation": "can_view",
+    "relation": "can_read_events",
     "subject_type": "user",
     "subject_id": input.user.id
   })
-
-  # ds.check({
-  #   "object_type": "group",
-  #   "object_id": "viewer",
-  #   "relation": "member",
-  #   "subject_type": "user",
-  #   "subject_id": input.user.id
-  # })
 }
 
-# Visible if the policy is allowed
 visible {
 	allowed
 }
