@@ -19,6 +19,3 @@ allowed {
   })
 }
 
-visible {
-	allowed
-}
